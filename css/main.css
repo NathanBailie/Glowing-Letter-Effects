@@ -44,3 +44,14 @@ body {
 body:hover .cursor {
     transform: translateY(5px) rotate(15deg) scale(1);
 }
+
+.elem {
+    position: absolute;
+    filter: drop-shadow(0 0 5px #0f0) drop-shadow(0 0 35px #0f0) hue-rotate(60deg);
+    color: #0f0;
+    font-size: 2em;
+    transform: translate(-50%, -50%);
+    transition: 1s;
+    pointer-events: none;
+    user-select: none;
+}
