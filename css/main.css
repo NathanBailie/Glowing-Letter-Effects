@@ -7,6 +7,11 @@
     font-family: 'Poppins', sans-serif;
 }
 
+:root {
+    --filter: drop-shadow(0 0 5px #0f0) drop-shadow(0 0 35px #0f0) hue-rotate(60deg);
+    --cursor-border: 5px solid #0f0;
+}
+
 body {
     min-height: 100vh;
     overflow: hidden;
@@ -21,13 +26,13 @@ body {
     position: fixed;
     width: 25px;
     height: 25px;
-    border-top: 5px solid #0f0;
-    border-left: 5px solid #0f0;
+    border-top: var(--cursor-border);
+    border-left: var(--cursor-border);
     transform: translateY(5px) rotate(15deg) scale(0);
     transform-origin: top;
     transition: transform 0.1s;
     pointer-events: none;
-    filter: drop-shadow(0 0 5px #0f0) drop-shadow(0 0 35px #0f0) hue-rotate(60deg);
+    filter: var(--filter);
 }
 
 .cursor::before {
@@ -47,11 +52,12 @@ body:hover .cursor {
 
 .elem {
     position: absolute;
-    filter: drop-shadow(0 0 5px #0f0) drop-shadow(0 0 35px #0f0) hue-rotate(60deg);
+    filter: var(--filter);
     color: #0f0;
     font-size: 2em;
     transform: translate(-50%, -50%);
     transition: 1s;
     pointer-events: none;
     user-select: none;
+    will-change: transform, opacity;
 }

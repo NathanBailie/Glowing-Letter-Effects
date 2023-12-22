@@ -34,7 +34,7 @@ document.addEventListener('mousemove', (e) => {
 
         setTimeout(() => {
             elem.remove()
-        }, 1000)
+        }, 1000);
 
     }, 10)
 });
