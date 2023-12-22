@@ -30,11 +30,26 @@ document.addEventListener('mousemove', (e) => {
         text.style.top = parseInt(text.style.top) - (dirY * (Math.random() * 200)) + 'px';
         text.style.opacity = 0;
         text.style.transform = 'scale(0.25)';
-        text.innerHTML = 'hi'
+        text.innerHTML = showRandomText();
 
         setTimeout(() => {
             elem.remove()
         }, 1000)
 
     }, 10)
-})
+});
+
+function showRandomText() {
+    const elems = [
+        'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm',
+        'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z',
+        '0', '1', '2', '3', '4', '5', '6', '7', '8', '9'
+    ];
+    let rndElement = elems[getRandomNum(0, elems.length - 1)];
+
+    return rndElement;
+}
+
+function getRandomNum(min, max) {
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+}
